@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    background-image: url(/hairdo.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-left: 0%;
+    padding-right: 0%;
+    box-sizing: border-box;
+    position: static;
+}
+.navbar{
+    width: 100%;
+    height: 10vh;
+    margin: 10px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    background-color: plum;
+    margin: 0px; 
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    position: fixed; 
+}
+
+.container .navbar h1{
+    font-size: 30px;
+    font-style: italic;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: whitesmoke;
+}
+h1 span {
+    color: deeppink;
+}
+ 
+nav{
+    align-items: flex-end;
+    padding-left: 40em;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0px 2px;
+    padding-left: 20px;
+    text-decoration: none;
+    
+}
+
+
+nav ul li a{
+    text-decoration: none;
+    gap: 1px;
+    color: slategray;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.paragraph{
+    font-family: roboto, arial, sans-serif;
+    line-height: 25px;
+    color: slategray;
+    column-count: 2;
+    padding: 0px 50px;
+}
+
+h2 {
+    font-family: roboto;
+    padding: 20px;
+    font-size: 30px;
+    font-family: roboto;
+    
+}
+
