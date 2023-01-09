@@ -11,9 +11,9 @@ closeCart.addEventListener("click" , () => {
 });
 
 if(document.readyState =="loading"){
-    doocument.addEventListener('DOMContentLoaded', start);
+    document.addEventListener('DOMContentLoaded', start);
 }else{
-    start();
+    start ();
 }
 
 function start(){
@@ -33,7 +33,7 @@ function addEvents(){
    });
 
    let cartQuantity_inputs = document.querySelectorAll('.cart-quantity')
-cartQuantity_inputs.forEach(input => {
+   cartQuantity_inputs.forEach(input => {
     input.addEventListener("change", handle_changeItemQuantity);
 });
 
@@ -55,23 +55,23 @@ function handle_addCartItem() {
   let imgSrc = product.querySelector(".product-img").src;
   console.log(title, price, imgSrc);
 
-  letnewToAdd = {
+  let newToAdd = {
     title,
     price,
     imgSrc,
   };
 
-  if(itemsAdded.find(el => el.title == newToAdd.title)){
+  if(itemsAdded.find(el => el.title == newToAdd.imgSrc)){
     alert("This Item Already Exists!");
     return;
-  }else{
+  } else{
     itemsAdded.push(newToAdd);
   }
 
   let cartBoxElement = CartBoxComponent(title, price, imgSrc);
   let newNode = document. createElement("div");
   newNode.innerHTML = cartBoxElement;
-  const cartContent = cart. querySelector(".cart-content");
+  const cartContent = cart.querySelector(".cart-content");
   cartContent.appendChild(newNode);
 
   update();
@@ -80,9 +80,8 @@ function handle_addCartItem() {
 //****************** HANDLE EVENTS FUNCTIONS ********************
 function handle_removeCartItem() {
     this.parentElement.remove();
-    itemsAdded * itemsAdded.filter(el=>el.title !=this.parentElement.querySelector(".cart-product-title").innerHTML
+    itemsAdded * itemsAdded.filter(el=>el.title !=this.parentElement.querySelector(".cart-product-price").innerHTML
     );
-
     update();
 }
 
@@ -95,7 +94,7 @@ function handle_changeItemQuantity(){
     update();
 }
 
-function Handle_buyOrder(){
+const handle_buyOrder = ()=>{
     if(itemsAdded.length <= 0){
         alert("There is No Order to Place Yet! \nPlease Make an Order first.");
         return;
@@ -112,11 +111,11 @@ function updateTotal() {
     let cartBoxes = document.querySelectorAll('.cart-box');
     const totalElement = cart.querySelector('.total-price');
     let total = 0;
-    cartBoxes.forEach(cartBox =>{
+    cartBoxes.forEach(cartBox => {
         let priceElement = cartBox.querySelector('.cart-price');
-        let price = parseFloat(priceElement.innerHTML.repace("$",""));
+        let price = parseFloat(priceElement.innerHTML.replace("$",""));
         let quantity = cartBox.querySelector(".cart-quantity").value;
-        total += price * quantity;
+        total += price * quantity;    
 });
 
     total = total.toFixed(2);
